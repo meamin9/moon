@@ -80,9 +80,9 @@ WSGI_APPLICATION = 'moon.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': '9moon',
-        'USER': 'meamin9',
-        'PASSWORD': '9mooncraft',
+        'NAME': 'moon',
+        'USER': 'moon',
+        'PASSWORD': '123456',
         'HOST': '127.0.0.1',
         'PORT': '5432',
     }
