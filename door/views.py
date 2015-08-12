@@ -3,7 +3,8 @@ from django.shortcuts import render
 
 # Create your views here.
 def test_view(request):
-    return photo_view(request)
+    return render(request, 'index.html')
+    # return photo_view(request)
     # return render(request, 'common/nav.html')
     # return render(request, 'picture/view.html')
 

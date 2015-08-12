@@ -1,0 +1,5 @@
+*.pyc
+!moon/settings.py
+.idea
+*.sqlite3
+*/migrations/
