@@ -1,16 +1,13 @@
 {% extends "common/base-bootstrap.html" %}
 {% block content %}
-<form action="." method="post">
+<form action="." method="post" class="container">
   {% csrf_token %}
-  <table>
-    {% for field in form %}
-     <tr>
-      <td>{{ field.label_tag }}</td>
-      <td>{{ field }}</td>
-      <td><input type="text" class="form-control" placeholder="input"></td>
-     </tr>
-    {% endfor %}
-  </table>
+  {% for field in form %}
+     <div class="form-group">
+       {{ field.label_tag }}
+       {{ field }}
+     </div>
+  {% endfor %}
   <input type="submit" value="submit">
 </form>
   <p>Hello World</p>

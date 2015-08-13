@@ -22,6 +22,8 @@ def register_user(request):
     print "sdddddddddddddddddddddd=================="
     if request.method == 'POST':
         form = RegisterInfo(request.POST)
+        print form.email, form.name, form.password, form.as_table()
+        print "sssssssssssssss"
         if form.is_valid():
             print form
             return render(request, 'index.html')
