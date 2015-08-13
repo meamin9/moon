@@ -4,7 +4,8 @@ from door.forms import *
 
 # Create your views here.
 def test_view(request):
-    return render(request, 'index.html')
+    return render(request, 'common/base-with-nav.html')
+    # return render(request, 'index.html')
     # return photo_view(request)
     # return render(request, 'common/nav.html')
     # return render(request, 'picture/view.html')
