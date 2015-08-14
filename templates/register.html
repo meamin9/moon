@@ -4,10 +4,18 @@
   {% csrf_token %}
   {% for field in form %}
     <div class="form-group">
-      <label class="col-sm-4 control-label" for="{{ field.id_for_label }}">{{ field.label }}</label>
-      <div class="col-sm-4">
-        {{ field }}
-      </div>
+      <div {% if field.errors %}
+            class="has-error"
+          {% elif field.value %}
+            class="has-success"
+          {% endif %}
+      >
+        <label class="col-sm-4 control-label" for="{{ field.id_for_label }}">{{ field.label }}</label>
+        <div class="col-sm-4">
+          {{ field }}
+        </div>
+        <span class="col-sm-4" style="color: #a94442;">{{ field.errors }}</span>
+      </div>{# for if div#}
     </div>
   {% endfor %}
   <div class="form-group">

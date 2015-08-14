@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from door.forms import *
+from django.contrib.auth.models import User
 
 
 # Create your views here.
@@ -21,13 +22,14 @@ def photo_view(request):
 
 def register_user(request):
     if request.method == 'POST':
-        form = RegisterInfo(request.POST)
-        print form.email, form.name, form.password, form.as_table()
+        form = RegisterForm(request.POST)
         if form.is_valid():
-            print form
+            username = form.cleaned_data['username']
+            password = form.cleaned_data['password']
+            email = form.cleaned_data['email']
+            user = User.objects.create_user(username, email, password)
+            user.save()
             return render(request, 'index.html')
-        else:
-            print form
     else:
-        form = RegisterInfo()
+        form = RegisterForm()
     return render(request, 'register.html', {'form': form})
