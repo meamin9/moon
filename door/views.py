@@ -4,7 +4,8 @@ from door.forms import *
 
 # Create your views here.
 def test_view(request):
-    return render(request, 'common/base-with-nav.html')
+    return register_user(request)
+    # return render(request, 'common/base-with-nav.html')
     # return render(request, 'index.html')
     # return photo_view(request)
     # return render(request, 'common/nav.html')
@@ -19,11 +20,9 @@ def photo_view(request):
 
 
 def register_user(request):
-    print "sdddddddddddddddddddddd=================="
     if request.method == 'POST':
         form = RegisterInfo(request.POST)
         print form.email, form.name, form.password, form.as_table()
-        print "sssssssssssssss"
         if form.is_valid():
             print form
             return render(request, 'index.html')
