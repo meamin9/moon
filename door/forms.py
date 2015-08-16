@@ -30,3 +30,10 @@ class RegisterForm(forms.Form):
         if User.objects.all().filter(email=self.cleaned_data['email']):
             raise ValidationError('邮箱已经注册', 'unique_email')
         return self.cleaned_data['email']
+
+
+class LoginForm(forms.Form):
+    username = forms.CharField(label='用户名',
+                               widget=forms.TextInput(attrs={'class': 'form-control', 'placeholder': '用户名'}))
+    password = forms.CharField(label='密码',
+                               widget=forms.PasswordInput(attrs={'class': 'form-control', 'placeholder': '密码'}))

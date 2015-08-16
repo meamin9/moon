@@ -1,9 +1,10 @@
 from django.shortcuts import render
 from door.forms import *
 from django.contrib.auth.models import User
+from django.contrib.auth import authenticate, login
+from django.http import HttpResponseRedirect
 
 
-# Create your views here.
 def test_view(request):
     return register_user(request)
     # return render(request, 'common/base-with-nav.html')
@@ -33,3 +34,25 @@ def register_user(request):
     else:
         form = RegisterForm()
     return render(request, 'register.html', {'form': form})
+
+
+def login_user(request):
+    incorrect = False
+    if request.method == 'POST':
+        form = LoginForm(request.POST)
+        if form.is_valid():
+            username = form.cleaned_data['username']
+            password = form.cleaned_data['password']
+            user = authenticate(username=username, password=password)
+            if user:
+                login(request, user)
+                return HttpResponseRedirect('/login/success/')
+            else:
+                incorrect = True
+    else:
+        form = LoginForm()
+    return render(request, 'login.html', {'form': form, 'incorrect': incorrect})
+
+
+def login_success(request):
+    return render(request, 'common/success.html')

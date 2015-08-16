@@ -9,5 +9,7 @@ urlpatterns = [
 
     url(r'^admin/', include(admin.site.urls)),
     url(r'^$', door.views.test_view),
-    url(r'^register$', door.views.register_user),
+    url(r'^register/$', door.views.register_user),
+    url(r'^login/$', door.views.login_user),
+    url(r'^login/success/$', door.views.login_success),
 ]
