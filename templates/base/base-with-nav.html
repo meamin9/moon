@@ -1,4 +1,4 @@
-{% extends "common/base-bootstrap.html" %}
+{% extends "base/base-bootstrap.html" %}
 {% block nav %}
   <nav class="navbar navbar-default navbar-fixed-top">
     <div class="container">
@@ -10,15 +10,17 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="#">Moon</a>
+        <a class="navbar-brand" href="#">9Mooncraft</a>
       </div>
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <ul class="nav navbar-nav">
+          <li><a href="#">论坛</a></li>
+          <li><a href="#">音乐</a></li>
           <li><a href="#">图区</a></li>
         </ul>
         <ul class="nav navbar-nav navbar-right">
-          <li><a href="#">注册</a></li>
-          <li><a href="#">登录</a></li>
+          <li><a href="/register/">注册</a></li>
+          <li><a href="/login/">登录</a></li>
         </ul>
       </div>
     </div>

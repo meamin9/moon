@@ -6,8 +6,7 @@ from django.http import HttpResponseRedirect
 
 
 def test_view(request):
-    return register_user(request)
-    # return render(request, 'common/base-with-nav.html')
+    return render(request, 'bbs/test.html')
     # return render(request, 'index.html')
     # return photo_view(request)
     # return render(request, 'common/nav.html')
@@ -56,3 +55,7 @@ def login_user(request):
 
 def login_success(request):
     return render(request, 'common/success.html')
+
+
+def home(request):
+    return render(request, 'home/home.html')
