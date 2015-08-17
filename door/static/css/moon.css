@@ -22,6 +22,13 @@ body{
     /*position: fixed;*/
 }
 
+.article-content-list{
+    padding: 0;
+}
+
+.article-content{
+    background-color: white;
+}
 #article-header{
     padding-bottom: 0;
 }
@@ -31,8 +38,45 @@ body{
     padding-right: 10px;
     line-height: 1.7em;
 }
+
 .article-title{
   padding-bottom: 9px;
   margin: 20px 0 5px;
   border-bottom: 1px solid #eee;
+}
+
+.comment{
+    border-radius: 7px;
+    padding: 11px 19px;
+    background-color: white;
+}
+.comment-header{
+  height: 50px;
+  margin-bottom: 10px;
+  border-bottom: 1px solid #eee;
+}
+
+.comment-img{
+    border-radius: 50%;
+    height: 50px;
+    margin-top: -5px;
+}
+.comment-count{
+    /*margin-left: -15px;*/
+    /*font-size: 40px;*/
+    /*letter-spacing: 1px;*/
+    /*margin-top: -5px;*/
+}
+.comment-content{
+    min-height: 100px;
+}
+
+.comment-footer{
+    border-top: 2px dashed #eee;
+}
+.comment-footer ul{
+    margin: 0;
+}
+.post-date{
+    display: block;
 }
